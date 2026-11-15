@@ -1,0 +1,167 @@
+import {
+  BookOpen,
+  Briefcase,
+  Building2,
+  ChartColumn,
+  CircleHelp,
+  Cloud,
+  Code,
+  Database,
+  ExternalLink,
+  Factory,
+  Globe,
+  GraduationCap,
+  Handshake,
+  House,
+  Info,
+  Layers,
+  Mail,
+  Newspaper,
+  Package,
+  Server,
+  Shield,
+  Smartphone,
+  Tag,
+  Users,
+  Zap,
+} from 'lucide-react';
+import type { MenuItem } from '../components/Menu';
+
+export const menu: MenuItem[] = [
+  { id: 'home', label: 'Home', description: 'Welcome back', icon: House, href: '#home' },
+  {
+    id: 'products',
+    label: 'Products',
+    description: 'Explore our offerings',
+    icon: Package,
+    children: [
+      {
+        id: 'software',
+        label: 'Software',
+        description: 'Custom builds and deployment',
+        icon: Code,
+        children: [
+          { id: 'web-apps', label: 'Web Apps', description: 'Modern, responsive platforms', icon: Globe, href: '#web-apps' },
+          { id: 'mobile-apps', label: 'Mobile Apps', description: 'Native and cross-platform', icon: Smartphone, href: '#mobile-apps' },
+          {
+            id: 'enterprise',
+            label: 'Enterprise',
+            description: 'Scalable systems for large orgs',
+            icon: Layers,
+            children: [
+              { id: 'erp', label: 'ERP Integration', description: 'Connect existing systems', icon: Layers, href: '#erp' },
+              { id: 'workflows', label: 'Custom Workflows', description: 'Automate internal processes', icon: Zap, href: '#workflows' },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'cloud',
+        label: 'Cloud',
+        description: 'Scalable infrastructure',
+        icon: Cloud,
+        children: [
+          { id: 'hosting', label: 'Hosting', description: 'Managed hosting on major providers', icon: Server, href: '#hosting' },
+          { id: 'storage', label: 'Storage', description: 'Coming soon', icon: Database, disabled: true },
+          { id: 'security', label: 'Security', description: 'Threat detection and response', icon: Shield, href: '#security' },
+        ],
+      },
+      { id: 'consulting', label: 'Consulting', description: 'Expert guidance and support', icon: Users, href: '#consulting' },
+    ],
+  },
+  { id: 'pricing', label: 'Pricing', description: 'Plans for every team size', icon: Tag, href: '#pricing' },
+  {
+    id: 'industries',
+    label: 'Industries',
+    description: 'Solutions by sector',
+    icon: ChartColumn,
+    children: [
+      {
+        id: 'finance',
+        label: 'Finance',
+        description: 'Banking, insurance and fintech',
+        icon: ChartColumn,
+        children: [
+          {
+            id: 'banking',
+            label: 'Banking',
+            description: 'Retail and corporate banking',
+            icon: Database,
+            children: [
+              { id: 'retail-banking', label: 'Retail Banking', description: 'Everyday consumer banking', icon: Users, href: '#retail-banking' },
+              { id: 'corporate-banking', label: 'Corporate Banking', description: 'Lending and treasury services', icon: Briefcase, href: '#corporate-banking' },
+            ],
+          },
+          { id: 'insurance', label: 'Insurance', description: 'Risk and claims platforms', icon: Shield, href: '#insurance' },
+          { id: 'investment', label: 'Investment', description: 'Wealth and portfolio tools', icon: ChartColumn, href: '#investment' },
+        ],
+      },
+      { id: 'healthcare', label: 'Healthcare', description: 'Patient-centred digital care', icon: Shield, href: '#healthcare' },
+      { id: 'retail', label: 'Retail', description: 'Omnichannel commerce platforms', icon: Package, href: '#retail' },
+      { id: 'education', label: 'Education', description: 'Tools for schools and campuses', icon: GraduationCap, href: '#education' },
+      { id: 'manufacturing', label: 'Manufacturing', description: 'Plant floor to supply chain', icon: Factory, href: '#manufacturing' },
+    ],
+  },
+  {
+    id: 'partners',
+    label: 'Partners',
+    description: 'Grow with us',
+    icon: Handshake,
+    children: [
+      { id: 'become-partner', label: 'Become a Partner', description: 'Apply to join the program', icon: Handshake, href: '#become-partner' },
+      { id: 'partner-portal', label: 'Partner Portal', description: 'Sign in to manage your account', icon: ExternalLink, href: '#partner-portal' },
+    ],
+  },
+  {
+    id: 'company',
+    label: 'Company',
+    description: 'Who we are',
+    icon: Building2,
+    children: [
+      { id: 'about', label: 'About', description: 'Our story and mission', icon: Info, href: '#about' },
+      { id: 'careers', label: 'Careers', description: 'Join our team', icon: Briefcase, href: '#careers' },
+      {
+        id: 'leadership',
+        label: 'Leadership',
+        description: 'Meet the people behind the work',
+        icon: Users,
+        children: [
+          {
+            id: 'executive-team',
+            label: 'Executive Team',
+            description: 'Our senior leadership',
+            icon: Users,
+            children: [
+              { id: 'ceo', label: 'CEO Office', description: 'Chief Executive Officer', icon: Users, href: '#ceo' },
+              { id: 'cfo', label: 'CFO Office', description: 'Chief Financial Officer', icon: Briefcase, href: '#cfo' },
+              { id: 'cto', label: 'CTO Office', description: 'Chief Technology Officer', icon: Code, href: '#cto' },
+            ],
+          },
+          { id: 'board', label: 'Board of Directors', description: 'Governance and oversight', icon: Shield, href: '#board' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'resources',
+    label: 'Resources',
+    description: 'Guides and learning materials',
+    icon: BookOpen,
+    children: [
+      { id: 'docs', label: 'Documentation', description: 'Guides and references', icon: BookOpen, href: '#docs' },
+      { id: 'training', label: 'Training', description: 'Courses and certifications', icon: GraduationCap, href: '#training' },
+      { id: 'blog', label: 'Blog', description: 'Product updates and insights', icon: Newspaper, href: '#blog' },
+    ],
+  },
+  {
+    id: 'support',
+    label: 'Support',
+    description: 'Get help when you need it',
+    icon: CircleHelp,
+    children: [
+      { id: 'help', label: 'Help Center', description: 'Answers to common questions', icon: CircleHelp, href: '#help' },
+      { id: 'status', label: 'System Status', description: 'Live service availability', icon: Zap, href: '#status' },
+    ],
+  },
+  { id: 'contact', label: 'Contact', description: 'Get in touch with us', icon: Mail, href: '#contact' },
+];

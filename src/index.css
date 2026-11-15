@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@keyframes menu-slide-in-right {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-slide-in-left {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.menu-slide-in-right {
+  animation: menu-slide-in-right 300ms ease-out;
+}
+
+.menu-slide-in-left {
+  animation: menu-slide-in-left 300ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-slide-in-right,
+  .menu-slide-in-left {
+    animation: none;
+  }
+}
+
+/*
+ * Sheet open/close transform — deliberately the legacy `transform` property,
+ * not Tailwind v4's standalone `translate` utility classes. The drag-to-dismiss
+ * code already sets `transform: translateY(...)` via inline style; mixing
+ * that with class-driven `translate` would apply both (they compose, neither
+ * overrides the other), which is fragile and inconsistent across engines.
+ * Keeping everything on one property avoids that entirely.
+ */
+.menu-sheet-hidden {
+  transform: translateY(100%);
+}
+
+.menu-sheet-visible {
+  transform: translateY(0);
+}
+
+.menu-sheet-transition {
+  transition: transform 300ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-sheet-transition {
+    transition-duration: 0ms;
+  }
+}
+
+@media (min-width: 64rem) {
+  .menu-sheet-hidden {
+    transform: translateX(100%);
+  }
+
+  .menu-sheet-visible {
+    transform: translateX(0);
+  }
+}
